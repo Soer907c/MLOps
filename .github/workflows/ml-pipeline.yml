@@ -1,10 +1,7 @@
 name: ML Pipeline
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+on: [push]
+
 
 jobs:
   run-ml-pipeline:
