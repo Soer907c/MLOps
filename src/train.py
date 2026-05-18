@@ -11,5 +11,5 @@ model.fit(x, y)
 predictions = model.predict(x)
 mse = mean_squared_error(y, predictions)
 
-print("Training completed")
+print("Training completed successfully")
 print(f"MSE: {mse:.4f}")
