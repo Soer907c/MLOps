@@ -1,7 +1,10 @@
-name: ML Pipeline Test
+name: ML Pipeline
 
-on: [push]
-
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   run-ml-pipeline:
@@ -16,9 +19,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install dependencies directly
         run: |
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          python -m pip install numpy scikit-learn mlflow
 
       - name: Run training script
         run: |
